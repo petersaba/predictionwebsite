@@ -18,6 +18,7 @@ h1{
 .main-section > img{
     width: 50%;
     min-width: 350px;
+    max-height: 600px;
 }
 
 .main-section > div{
@@ -34,7 +35,8 @@ h1{
 
 .main-section > div > button{
     align-self: center;
-    width: 150px;
+    width: 50%;
+    height: 35px;
     font-size: 1em;
     padding: 5px;
     border-radius: 15px;
@@ -46,14 +48,17 @@ h1{
 
 .main-section > div > div{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     margin-top: 10px;
 }
 
 .main-section > div > div > input{
     width: 30%;
     height: 100%;
-    border-radius: 15px;
+    border-radius: 10px;
+    padding: 0 5px;
+    margin: 0 5px;
+    flex-grow: 1;
 }
 
 @media only screen and (max-width: 500px){
