@@ -1,3 +1,4 @@
+/* CSS reset */
 *{
     padding: 0;
     margin: 0;
@@ -9,6 +10,7 @@ h1{
     text-align: center;
 }
 
+/* style for the predictions as they will be inside span tag */
 span{
     font-weight: bold;
     color: green;
@@ -21,6 +23,7 @@ span{
     flex-wrap: wrap;
 }
 
+/* limiting image height and width as retreived images have different resolution */
 .main-section > img{
     width: 50%;
     min-width: 350px;
