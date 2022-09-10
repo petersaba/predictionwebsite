@@ -9,6 +9,12 @@ h1{
     text-align: center;
 }
 
+span{
+    font-weight: bold;
+    color: green;
+    font-size: larger;
+}
+
 .main-section{
     display: flex;
     justify-content: space-evenly;
