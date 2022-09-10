@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    padding: 20px;
+    text-align: center;
+}
+
+.main-section{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2vw;
+}
+
+.main-section > img{
+    padding-left: 5vw;
+}
+
+.main-section > div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: space-around;
+    padding: 0 5vw;
+}
+
+.main-section > div > button{
+    align-self: center;
+    width: 150px;
+    height: 30px;
+}
+
+.main-section > div > *{
+    padding: 0 10px;
+}
