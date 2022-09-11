@@ -1,8 +1,10 @@
 // automatically call the function to fetch a new dog image when the page is loaded/reloaded
 getRandomDog()
+
 // store all paragraph elements in the page to change them based on user input
 var paragraphs = document.getElementsByTagName("p")
-
+var all_users = document.cookie.split("; ")
+checkIdentification()
 
 // fetch the random dog response from the api and insert the given url in the message attribute into the src attribute of the image tag
 async function getRandomDog(){
@@ -62,3 +64,56 @@ async function predict(){
         await getNationalityPrediction(name)
     }
 }   
+
+function checkIdentification(){
+    let choice
+    while (choice != "y" && choice !="n") {
+        choice = prompt("Do you already have an account?(y/n)")
+        if (choice == "y"){
+            loginPage()
+        }else if (choice == "n"){
+            registrationPage()
+        }
+    }
+}
+
+function registrationPage(){
+    let username = prompt("enter new username")
+    let all_usernames = getAllUsernames()
+    while(isInArray(username, all_usernames) || !username){
+        username = prompt("username is not available enter a new one")
+    }
+    let password
+    while(!password){
+        password = prompt("enter new password")
+    }
+    document.cookie = username + "=" + password + "; expires= Thu, 28 Nov 2030 12:00:00; path=/"
+}
+
+function loginPage(){
+    let username = prompt("enter your username")
+    let password = prompt("enter your password")
+    while(!isInArray(username + "=" + password, all_users)){
+        username = prompt("wrong info rewrite your username")
+        password = prompt("enter your password")
+    }
+}
+
+function getAllUsernames(){
+    let all_usernames = []
+    let username
+    for(let i =0; i<all_users.length; i++){
+        username = all_users[i].split("=")[0]
+        all_usernames.push(username)
+    }
+    return all_usernames
+}
+
+function isInArray(value, arr){
+    for(let i=0; i<arr.length; i++){
+        if(value == arr[i]){
+            return true
+        }
+    }
+    return false
+}
