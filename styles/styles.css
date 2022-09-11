@@ -13,8 +13,23 @@ h1{
 /* style for the predictions as they will be inside span tag */
 span{
     font-weight: bold;
-    color: green;
+    color: rgba(1, 128, 1, 0.755);
     font-size: larger;
+}
+
+button{
+    background-color: lightgreen;
+    font-weight: bold;
+    border-radius: 15px;
+    border: 0;
+    color: white;
+    padding: 5px;
+    height: 35px;
+    font-size: 1em; 
+}
+
+h4{
+    text-align: center;
 }
 
 .main-section{
@@ -45,14 +60,7 @@ span{
 .main-section > div > button{
     align-self: center;
     width: 50%;
-    height: 35px;
-    font-size: 1em;
-    padding: 5px;
-    border-radius: 15px;
-    border: 0;
-    color: white;
-    font-weight: bold;
-    background-color: lightgreen;
+    font-size: 1em;    
 } 
 
 .main-section > div > div{
@@ -90,4 +98,9 @@ span{
         margin-top: 5px;
         font-size: 1em;
     }
+}
+
+.activity-container{
+    text-align: center;
+    padding: 20px;
 }
