@@ -75,8 +75,10 @@ function checkIdentification(){
             registrationPage()
         }
     }
+    getUserIp()
 }
 
+// show prompt as long as the username is already chosen or is null or empty
 function registrationPage(){
     let username = prompt("enter new username")
     let all_usernames = getAllUsernames()
@@ -116,4 +118,18 @@ function isInArray(value, arr){
         }
     }
     return false
+}
+
+// index = length-2 as the span will be the one before the last as the last is for the ip address
+async function getRandomActivity(){
+    let response = await axios.get('https://www.boredapi.com/api/activity')
+    let activityObject = await response.data
+    let allSpans = document.querySelectorAll("span")
+    allSpans[allSpans.length-2].innerText = activityObject.activity
+}
+
+async function getUserIp(){
+    let response = await axios.get("https://api.ipify.org/?format=json")
+    let ipObject = await response.data
+    document.getElementById("ipAddress").innerHTML ="Your public Ip address is: <span>" + ipObject.ip + "</span>"
 }
